@@ -10,15 +10,20 @@ function Repos() {
       .then((response) => response.json())
       .then((data) => setRepositories(data));
   }, []);
+
   return (
     <div>
       <ul>
         {repositories.map((repository) => {
           return (
-            <li>
-              <p>{repository.name}</p>
+            <div>
+              <article style={{ textTransform: "uppercase" }}>
+                {repository.name === "github-portfolio"
+                  ? repository.name + " (você já está aqui!)"
+                  : repository.name}
+              </article>
               {console.log(repository.name)}
-            </li>
+            </div>
           );
         })}
       </ul>
