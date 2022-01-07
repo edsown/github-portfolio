@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import images from "./images";
 
 import React from "react";
 
@@ -11,23 +12,37 @@ function Repos() {
       .then((data) => setRepositories(data));
   }, []);
 
+  // todo: add images to each repo dinamically
   return (
-    <div>
-      <ul>
+    <section className="card-list">
+      <div className="pagina">
         {repositories.map((repository) => {
           return (
-            <div>
-              <article style={{ textTransform: "uppercase" }}>
-                {repository.name === "github-portfolio"
-                  ? repository.name + " (você já está aqui!)"
-                  : repository.name}
-              </article>
-              {console.log(repository.name)}
-            </div>
+            <article className="card">
+              <header className="card-header">
+                <p>{repository.created_at}</p>
+                <h2>
+                  <a href="#sobre" style={{ textTransform: "uppercase" }}>
+                    {repository.name}
+                  </a>
+                </h2>
+                <p className="description">
+                  {repository.name === "github-portfolio"
+                    ? "Você já está aqui!"
+                    : repository.description}
+                </p>
+              </header>
+              <div className="tags">
+                <a href="http://github.com/edsown" target="_blank">
+                  github
+                </a>
+                <a href="#">vercel</a>
+              </div>
+            </article>
           );
         })}
-      </ul>
-    </div>
+      </div>{" "}
+    </section>
   );
 }
 

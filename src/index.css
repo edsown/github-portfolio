@@ -1,13 +1,172 @@
-body {
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  font-family: "Montserrat", "Myriad Apple", sans-serif;
+}
+html {
+  scroll-behavior: smooth;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+a,
+li {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:visited {
+  color: whitesmoke;
+  opacity: 0.9;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+a {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+}
+
+.pagina {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  height: 350px;
+  width: 400px;
+  min-width: 350px;
+  padding: 3.5rem;
+  border-radius: 16px;
+  box-shadow: -1rem 0 3rem #000;
+  display: flex;
+  flex-direction: column;
+  transition: 0.2s;
+  margin: 2rem;
+  scroll-snap-align: start;
+  clear: both;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(1rem);
+  background: black;
+}
+
+.card-header {
+  margin-bottom: auto;
+}
+
+.card p {
+  font-size: 18px;
+  margin: 0 0 1rem;
+  color: white;
+  mix-blend-mode: difference;
+  display: none;
+}
+
+.card:hover p {
+  display: flex;
+}
+
+.card-header h2 {
+  font-size: 20px;
+  margin: 0.25rem 0 auto;
+  text-decoration: none;
+  color: white;
+  mix-blend-mode: difference;
+  border: 0;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.card-header h2 a:hover {
+  background: linear-gradient(90deg, #0004ff, #80e52e);
+  text-shadow: none;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.card-author {
+  margin: 3rem 0 0;
+  display: grid;
+  grid-template-columns: 75px 1fr;
+  align-items: center;
+  position: relative;
+}
+
+.author-avatar {
+  grid-area: auto;
+  align-self: start;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.author-avatar img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  filter: grayscale(100%);
+  display: block;
+  overflow: hidden;
+  margin: 16px 10px;
+}
+
+.author-name {
+  grid-area: auto;
+  box-sizing: border-box;
+}
+
+.author-name-prefix {
+  font-style: normal;
+  font-weight: 700;
+  color: #7a7a8c;
+}
+
+.tags {
+  margin: 1rem 0 2rem;
+  padding: 0.5rem 0 1rem;
+  line-height: 2;
+  margin-bottom: 0;
+  filter: drop-shadow(3px 3px 4px black);
+}
+
+.tags a {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.5rem;
+  color: white;
+  mix-blend-mode: difference;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  border: 3px solid white;
+  border-radius: 2rem;
+  padding: 0.2rem 0.85rem 0.25rem;
+  margin: 0 10px 0 0px;
+  position: relative;
+}
+
+.tags a:hover {
+  background: linear-gradient(90deg, #ff8a00, #e52e71);
+  text-shadow: none;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  border-color: white;
+}
+
+.email-button {
+  padding: 10px;
+  color: whitesmoke;
+  background-color: #444b6e;
+  margin-top: 20px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: 600;
 }
