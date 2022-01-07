@@ -7,10 +7,14 @@ function Repos() {
   const [repositories, setRepositories] = useState([]);
 
   useEffect(() => {
-    fetch("http://api.github.com/users/edsown/repos")
+    fetch("http://api.github.com/users/thiagopnts/repos")
       .then((response) => response.json())
       .then((data) => setRepositories(data));
   }, []);
+
+  function dateFormat(date) {
+    return date.slice(8, 10) + "-" + date.slice(5, 7) + "-" + date.slice(0, 4);
+  }
 
   // todo: add images to each repo dinamically
   return (
@@ -20,7 +24,7 @@ function Repos() {
           return (
             <article className="card">
               <header className="card-header">
-                <p>{repository.created_at}</p>
+                <p>{dateFormat(repository.created_at)}</p>
                 <h2>
                   <a href="#sobre" style={{ textTransform: "uppercase" }}>
                     {repository.name}
@@ -36,7 +40,7 @@ function Repos() {
                 <a href="http://github.com/edsown" target="_blank">
                   github
                 </a>
-                <a href="#">vercel</a>
+                <a href="#">demo</a>
               </div>
             </article>
           );

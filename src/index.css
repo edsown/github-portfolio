@@ -43,11 +43,17 @@ a {
   min-width: 350px;
   padding: 3.5rem;
   border-radius: 16px;
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
   box-shadow: -1rem 0 3rem #000;
   display: flex;
   flex-direction: column;
   transition: 0.2s;
-  margin: 2rem;
+  margin: 1rem;
   scroll-snap-align: start;
   clear: both;
   position: relative;
@@ -66,7 +72,7 @@ a {
   font-size: 18px;
   margin: 0 0 1rem;
   color: white;
-  mix-blend-mode: difference;
+  /* mix-blend-mode: difference; */
   display: none;
 }
 
@@ -79,7 +85,7 @@ a {
   margin: 0.25rem 0 auto;
   text-decoration: none;
   color: white;
-  mix-blend-mode: difference;
+  /* mix-blend-mode: difference; */
   border: 0;
   display: inline-block;
   cursor: pointer;
@@ -142,7 +148,7 @@ a {
   font-weight: 700;
   font-size: 0.5rem;
   color: white;
-  mix-blend-mode: difference;
+  /* mix-blend-mode: difference; */
   text-transform: uppercase;
   font-size: 0.8rem;
   border: 3px solid white;
