@@ -6,6 +6,7 @@
 }
 html {
   scroll-behavior: smooth;
+  background-color: #000;
 }
 
 a,
@@ -57,6 +58,7 @@ a {
 .card:hover {
   transform: translateY(1rem);
   background: black;
+  border: solid wheat;
 }
 
 .card-header {
@@ -65,7 +67,7 @@ a {
 
 .card p {
   font-size: 18px;
-  margin: 0 0 1rem;
+  margin: 0.5rem 0 1rem;
   color: white;
   /* mix-blend-mode: difference; */
   display: none;
