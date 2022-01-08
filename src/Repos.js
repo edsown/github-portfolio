@@ -7,7 +7,7 @@ function Repos() {
   const [repositories, setRepositories] = useState([]);
 
   useEffect(() => {
-    fetch("http://api.github.com/users/edsown/repos")
+    fetch("http://api.github.com/users/thiagopnts/repos")
       .then((response) => response.json())
       .then((data) => setRepositories(data));
   }, []);
@@ -26,6 +26,12 @@ function Repos() {
     }
     return 0;
   }
+  const displayNone = {
+    display: "none",
+  };
+  const displayBlock = {
+    display: "inline-block",
+  };
 
   // fazer: adicionar imagens dinamicamente pra cada repositório
   return (
@@ -41,6 +47,7 @@ function Repos() {
                     {repository.name}
                   </a>
                 </h2>
+
                 <p className="description">
                   {repository.name === "github-portfolio"
                     ? "Você já está aqui!"
@@ -51,7 +58,15 @@ function Repos() {
                 <a href={repository.html_url} target="_blank">
                   github
                 </a>
-                <a href="#">demo</a>
+                <a
+                  target="_blank"
+                  style={
+                    repository.homepage == null ? displayNone : displayBlock
+                  }
+                  href={repository.homepage}
+                >
+                  {repository.homepage == null ? "no demo" : "demo"}
+                </a>
               </div>
             </article>
           );
