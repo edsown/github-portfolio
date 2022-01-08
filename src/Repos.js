@@ -46,7 +46,7 @@ function Repos() {
                     {repository.name}
                   </a>
                 </h2>
-                <p className="convert-emoji">
+                <p className="description">
                   {repository.name === "github-portfolio"
                     ? "Você já está aqui!"
                     : emoji.toRich(repository.description)}

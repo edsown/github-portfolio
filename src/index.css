@@ -94,42 +94,6 @@ a {
   background-clip: text;
 }
 
-.card-author {
-  margin: 3rem 0 0;
-  display: grid;
-  grid-template-columns: 75px 1fr;
-  align-items: center;
-  position: relative;
-}
-
-.author-avatar {
-  grid-area: auto;
-  align-self: start;
-  position: relative;
-  box-sizing: border-box;
-}
-
-.author-avatar img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  filter: grayscale(100%);
-  display: block;
-  overflow: hidden;
-  margin: 16px 10px;
-}
-
-.author-name {
-  grid-area: auto;
-  box-sizing: border-box;
-}
-
-.author-name-prefix {
-  font-style: normal;
-  font-weight: 700;
-  color: #7a7a8c;
-}
-
 .tags {
   margin: 1rem 0 2rem;
   padding: 0.5rem 0 1rem;
@@ -160,14 +124,4 @@ a {
   -webkit-background-clip: text;
   background-clip: text;
   border-color: white;
-}
-
-.email-button {
-  padding: 10px;
-  color: whitesmoke;
-  background-color: #444b6e;
-  margin-top: 20px;
-  border-radius: 5px;
-  text-transform: uppercase;
-  font-weight: 600;
 }
