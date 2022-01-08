@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import images from "./images";
-
 import React from "react";
-
+var emoji = require("emoji-shorts");
 function Repos() {
   const [repositories, setRepositories] = useState([]);
 
@@ -47,11 +46,10 @@ function Repos() {
                     {repository.name}
                   </a>
                 </h2>
-
-                <p className="description">
+                <p className="convert-emoji">
                   {repository.name === "github-portfolio"
                     ? "Você já está aqui!"
-                    : repository.description}
+                    : emoji.toRich(repository.description)}
                 </p>
               </header>
               <div className="tags">
