@@ -7,7 +7,7 @@ function Repos() {
   const [repositories, setRepositories] = useState([]);
 
   useEffect(() => {
-    fetch("http://api.github.com/users/thiagopnts/repos")
+    fetch("http://api.github.com/users/edsown/repos")
       .then((response) => response.json())
       .then((data) => setRepositories(data));
   }, []);
@@ -16,11 +16,22 @@ function Repos() {
     return date.slice(8, 10) + "-" + date.slice(5, 7) + "-" + date.slice(0, 4);
   }
 
-  // todo: add images to each repo dinamically
+  function compare(a, b) {
+    // função comparativa pra organizar os repositórios por data de criação
+    if (a.created_at > b.created_at) {
+      return -1;
+    }
+    if (a.created_at < b.created_at) {
+      return 1;
+    }
+    return 0;
+  }
+
+  // fazer: adicionar imagens dinamicamente pra cada repositório
   return (
     <section className="card-list">
       <div className="pagina">
-        {repositories.map((repository) => {
+        {repositories.sort(compare).map((repository) => {
           return (
             <article className="card">
               <header className="card-header">
@@ -37,7 +48,7 @@ function Repos() {
                 </p>
               </header>
               <div className="tags">
-                <a href="http://github.com/edsown" target="_blank">
+                <a href={repository.html_url} target="_blank">
                   github
                 </a>
                 <a href="#">demo</a>
