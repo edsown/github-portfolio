@@ -4,9 +4,10 @@ import React from "react";
 var emoji = require("emoji-shorts");
 function Repos() {
   const [repositories, setRepositories] = useState([]);
+  const [images, setImages] = useState([]);
 
   useEffect(() => {
-    fetch("http://api.github.com/users/thiagopnts/repos")
+    fetch("http://api.github.com/users/edsown/repos")
       .then((response) => response.json())
       .then((data) => setRepositories(data));
   }, []);
@@ -37,6 +38,7 @@ function Repos() {
     <section className="card-list">
       <div className="pagina">
         {repositories.sort(compare).map((repository) => {
+          console.log(repository.archive_url);
           return (
             <article className="card">
               <header className="card-header">
@@ -64,12 +66,15 @@ function Repos() {
                   href={repository.homepage}
                 >
                   {repository.homepage == null ? "no demo" : "demo"}
+                  {console.log(repository.issues_url.flat)}
                 </a>
+
+                <img src={repository.issues_url[0].flat}></img>
               </div>
             </article>
           );
         })}
-      </div>{" "}
+      </div>
     </section>
   );
 }
