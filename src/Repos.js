@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
-import images from "./images";
+
 import React from "react";
 var emoji = require("emoji-shorts");
 function Repos() {
   const [repositories, setRepositories] = useState([]);
-  const [images, setImages] = useState([]);
 
   useEffect(() => {
     fetch("http://api.github.com/users/edsown/repos")
@@ -50,16 +49,17 @@ function Repos() {
                 </h2>
                 <p className="description">
                   {repository.name === "github-portfolio"
-                    ? "Você já está aqui!"
+                    ? "You're already here!"
                     : emoji.toRich(repository.description)}
                 </p>
               </header>
               <div className="tags">
-                <a href={repository.html_url} target="_blank">
+                <a href={repository.html_url} target="_blank" rel="noreferrer">
                   github
                 </a>
                 <a
                   target="_blank"
+                  rel="noreferrer"
                   style={
                     repository.homepage == null ? displayNone : displayBlock
                   }
@@ -68,8 +68,6 @@ function Repos() {
                   {repository.homepage == null ? "no demo" : "demo"}
                   {console.log(repository.issues_url.flat)}
                 </a>
-
-                <img src={repository.issues_url[0].flat}></img>
               </div>
             </article>
           );
