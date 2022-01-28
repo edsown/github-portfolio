@@ -6,7 +6,7 @@ function Repos() {
   const [repositories, setRepositories] = useState([]);
 
   useEffect(() => {
-    fetch("http://api.github.com/users/edsown/repos")
+    fetch("https://api.github.com/users/edsown/repos")
       .then((response) => response.json())
       .then((data) => setRepositories(data));
   }, []);
