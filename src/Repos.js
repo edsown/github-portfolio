@@ -61,11 +61,11 @@ function Repos() {
                   target="_blank"
                   rel="noreferrer"
                   style={
-                    repository.homepage == null ? displayNone : displayBlock
+                    repository.homepage === "" ? displayNone : displayBlock
                   }
                   href={repository.homepage}
                 >
-                  {repository.homepage == null ? "no demo" : "demo"}
+                  {repository.homepage === "" ? "no demo" : "demo"}
                   {console.log(repository.issues_url.flat)}
                 </a>
               </div>
