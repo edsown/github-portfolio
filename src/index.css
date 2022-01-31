@@ -9,6 +9,9 @@ html {
   background-color: #000;
 }
 
+h1 {
+  color: whitesmoke;
+}
 a,
 li {
   text-decoration: none;
