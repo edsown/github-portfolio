@@ -12,6 +12,12 @@ html {
 h1 {
   color: whitesmoke;
 }
+h2 {
+  color: whitesmoke;
+  margin: 10%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
 a,
 li {
   text-decoration: none;
@@ -59,8 +65,15 @@ a {
   position: relative;
 }
 
+@media (min-width: 600px) {
+  .card:hover {
+    transform: translateY(1rem);
+    background: black;
+    border: solid wheat;
+  }
+}
+
 .card:hover {
-  transform: translateY(1rem);
   background: black;
   border: solid wheat;
 }

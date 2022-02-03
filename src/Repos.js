@@ -32,6 +32,8 @@ function Repos() {
     display: "inline-block",
   };
 
+
+
   // fazer: adicionar imagens dinamicamente pra cada repositório
   return (
     <section className="card-list">
@@ -39,7 +41,7 @@ function Repos() {
         {repositories.sort(compare).map((repository) => {
           console.log(repository.archive_url);
           return (
-            <article className="card">
+            <article className="card" >
               <header className="card-header">
                 <p>{dateFormat(repository.created_at)}</p>
                 <h2>

@@ -9,6 +9,12 @@ function App() {
       <br />
       <br />
       <Repos />
+
+      <h2>
+        This portfolio fetches data from the GitHub API and displays it in
+        chronological order. If you are in a mobile device, try tapping one of
+        the cards.
+      </h2>
     </div>
   );
 }
